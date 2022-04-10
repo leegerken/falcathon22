@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include <ncurses.h>
 #include <stdlib.h>
 
@@ -13,8 +14,8 @@ int playerMove(int y, int x, Player * user);
   Player * newPlayer;
   newPlayer = malloc(sizeof(Player));
 
-  newPlayer->xPosition = 7;
-  newPlayer->yPosition = 5;
+  newPlayer->xPosition = 4;
+  newPlayer->yPosition = 2;
 
   mvprintw(newPlayer->yPosition, newPlayer->xPosition, "@");
   move(1,0);
@@ -25,29 +26,35 @@ int screenSetup(){
   initscr();
   noecho();
   refresh();
+  curs_set(0);
 
   return 0;
 }
 
 int titleSetup(){
 
+  mvprintw(0, 10, "Falcathon 2022");
   mvprintw(4, 8, "DUNGEON");
+  mvprintw(6, 8, "Press z");
+  mvprintw(7, 1, "Version 0.1");
   while (getch() != 'z') {
   }
-  
+ 
+  clear();
   return 0;
 }
 
 int mapSetup(){
-  initscr();
-  mvprintw(0, 2, "--------");
-  mvprintw(1, 2, "|......|");
-  mvprintw(2, 2, "|......|");
-  mvprintw(3, 2, "|......|");
-  mvprintw(4, 2, "--------");
+  
+  mvprintw(0, 2, "--------  ------------");
+  mvprintw(1, 2, "|......|  |..........|");
+  mvprintw(2, 2, "|....................|");
+  mvprintw(3, 2, "|......|  |..........|");
+  mvprintw(4, 2, "--------  ------------");
 
   mvprintw(6,  1,  "-----------------------");
-  mvprintw(7,  1,  "Life:");
+  mvprintw(7,  1,  "Life: 10");
+  mvprintw(7, 18, "(q)uit");
   
   return 0;
 }
