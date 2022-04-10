@@ -35,19 +35,20 @@ Hosted by the Linux Club
 
 ---
 
-# Who Am I
+# Who Am I?
 
 ---
 
 Lee - Philosophy
 
-I like working in the terminal.
+I like linux because I like good software.
 
 ---
 
-Favorite Program:
+##Favorite Program: vim
 
-##vim
+
+I like working in the terminal.
 
 ---
 

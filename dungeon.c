@@ -23,25 +23,31 @@ int playerMove(int y, int x, Player * user);
 
 int screenSetup(){
   initscr();
-  printw("Hello, world!");
   noecho();
   refresh();
 
   return 0;
 }
 
-int mapSetup(){
-  mvprintw(3, 3, "--------");
-  mvprintw(4, 3, "|......|");
-  mvprintw(5, 3, "|......|");
-  mvprintw(6, 3, "|......|");
-  mvprintw(7, 3, "--------");
+int titleSetup(){
 
-  mvprintw(9, 3, "-----------");
-  mvprintw(10, 3, "|.........|");
-  mvprintw(11, 3, "|.........|");
-  mvprintw(12, 3, "|.........|");
-  mvprintw(13, 3, "-----------");
+  mvprintw(4, 8, "DUNGEON");
+  while (getch() != 'z') {
+  }
+  
+  return 0;
+}
+
+int mapSetup(){
+  initscr();
+  mvprintw(0, 2, "--------");
+  mvprintw(1, 2, "|......|");
+  mvprintw(2, 2, "|......|");
+  mvprintw(3, 2, "|......|");
+  mvprintw(4, 2, "--------");
+
+  mvprintw(6,  1,  "-----------------------");
+  mvprintw(7,  1,  "Life:");
   
   return 0;
 }
@@ -87,6 +93,8 @@ int main() {
   Player * user;
   int ch;
   screenSetup();
+  
+  titleSetup();
 
   mapSetup();
   user = playerSetup();
