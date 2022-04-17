@@ -1,0 +1,27 @@
+#.profile used in the 2022 Falcathon
+#Not sure if there is anything valuable here but I wanted to back it up just in case.
+source $HOME/.bashrc
+
+if [ -f /opt/homebrew/bin/brew ]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+export PATH=$PATH:/Users/lee/.local/bin
+export PATH=$PATH:/home/lee/.local/bin
+
+export BASH_SILENCE_DEPRECATION_WARNING=1 #MacOS-Removes notice when you are not using zsh >:/
+
+export EDITOR="/usr/bin/vim"
+
+#if [ -f $HOME/.config/lf/lficons ]; then
+#	. $HOME/.config/lf/lficons
+#fi
+
+#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#    tmux attach -t main || tmux new -s main
+#fi
+
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  #exec startx -- -nocursor
+  #exec startx
+fi
